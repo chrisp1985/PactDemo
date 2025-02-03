@@ -1,0 +1,34 @@
+plugins {
+    id 'java'
+    id("au.com.dius.pact") version "4.7.0-beta.0"
+}
+
+group = 'com.chrisp1985'
+version = '0.0.1-producer'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+
+//    implementation 'au.com.dius.pact.provider:junit5:4.6.16'
+    testImplementation 'au.com.dius.pact.provider:junit5spring:4.6.7'
+    // Spring Boot Testing
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
+    // Mocking dependencies
+    testImplementation 'org.mockito:mockito-core'
+
+}
+
+test {
+    systemProperty "pact.provider.version", "1.0.0"
+    systemProperty "pact.verifier.publishResults", "true"
+}
+
+pact {
+    broker {
+        pactBrokerUrl = "http://localhost:9292"
+    }
+}

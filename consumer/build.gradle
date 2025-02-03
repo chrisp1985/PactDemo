@@ -1,0 +1,25 @@
+plugins {
+    id 'java'
+    id("au.com.dius.pact") version "4.7.0-beta.0"
+}
+
+group = 'com.chrisp1985'
+version = '0.0.1-consumer'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+
+    implementation 'au.com.dius.pact.consumer:junit5:4.6.16'
+    implementation 'au.com.dius.pact.consumer:java8:4.1.43'
+    testImplementation 'io.rest-assured:rest-assured:5.5.0'
+
+}
+
+pact {
+    publish {
+        pactBrokerUrl = 'http://localhost:9292' // ✅ Correct property name
+    }
+}

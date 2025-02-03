@@ -1,4 +1,4 @@
-package com.chrisp1985.pact.client;
+package com.chrisp1985.pact.configuration;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
