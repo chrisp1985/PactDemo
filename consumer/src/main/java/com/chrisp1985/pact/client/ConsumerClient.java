@@ -23,7 +23,7 @@ public class ConsumerClient {
     public String getUsers() {
 
         var response = restClient.get()
-                .uri("/v1/users")
+                .uri("/v1/user")
                 .retrieve()
                 .toEntity(String.class)
                 .getBody();
